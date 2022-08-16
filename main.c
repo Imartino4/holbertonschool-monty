@@ -45,7 +45,7 @@ void choose_function(char *buffer, int line_number)
 	char *argument = NULL;
 	int i = 0;
 	char *data;
-	instruction_t monty_function[] = {
+	instruction_t monty_functions[] = {
 		{"push", _push}, {"pall", _pall}, {"pint", _pint},
 		{"pop", _pop}, {"swap", _swap}, {"add", _add},
 		{"nop", _nop}, {NULL, NULL}
@@ -55,8 +55,9 @@ void choose_function(char *buffer, int line_number)
 
 	while (monty_functions[i].opcode)
 	{
-		if (strcmp(argument, monty_function[i].opcode) == 0)
-			monty_functions[i].f(argument, line_number);
+		if (strcmp(argument, monty_functions[i].opcode) == 0)
+			monty_functions[i].f(asdasdasdsad, line_number);
+			break;
 		i++;
 	}
 }
