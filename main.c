@@ -29,15 +29,6 @@ int main(int argc, char **argv)
 		count_line++;
 		choose_function(buffer, count_line, &head);
 	}
-	//strtok(buffer, " ");
-	
-	/* push     2 */
-	
-	/* push primer strtok */
-
-	/* 2 segundo strtok en funcion push */
-
-
 	return (0);
 }
 
@@ -45,7 +36,6 @@ void choose_function(char *buffer, int line_number, stack_t **head)
 {
 	char *argument = NULL;
 	int i = 0;
-	char *data;
 	instruction_t monty_functions[] = {
 		{"push", _push}, {"pall", _pall}, {"pint", _pint}/*,
 		{"pop", _pop}, {"swap", _swap}, {"add", _add},

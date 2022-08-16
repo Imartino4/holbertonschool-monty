@@ -11,6 +11,7 @@ void _push(stack_t **head_ref, unsigned int line_number)
 	stack_t *new_elem = malloc(sizeof(stack_t)); /*HACER FREE*/
 	stack_t *aux = *head_ref;
 	int data;
+	(void)line_number;
 
 	data = atoi(strtok(NULL, " \n"));
 	if (new_elem == NULL)
@@ -38,6 +39,7 @@ void _push(stack_t **head_ref, unsigned int line_number)
 void _pall(stack_t **head_ref, unsigned int line_number)
 {
 	stack_t *aux = NULL;
+	(void)line_number;
 
 	aux = *head_ref;
 	while (aux)
@@ -55,6 +57,7 @@ void _pall(stack_t **head_ref, unsigned int line_number)
 void _pint(stack_t **head_ref, unsigned int line_number)
 {
 	stack_t *aux = NULL;
+	(void)line_number;
 
 	aux = *head_ref;
 	while (aux->next)
