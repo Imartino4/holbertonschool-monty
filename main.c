@@ -12,7 +12,9 @@ int main(int argc, char **argv)
 	FILE *monty_file;
 	char buffer[1024];
 	unsigned int count_line = 0;
+	stack_t *head;
 
+	head = NULL;
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
@@ -24,9 +26,8 @@ int main(int argc, char **argv)
 
 	while (fgets(buffer, 1024, monty_file))
 	{
-		printf("%s \n", buffer);
 		count_line++;
-		choose_function(buffer, count_line);
+		choose_function(buffer, count_line, &head);
 	}
 	//strtok(buffer, " ");
 	
@@ -40,24 +41,25 @@ int main(int argc, char **argv)
 	return (0);
 }
 
-void choose_function(char *buffer, int line_number)
+void choose_function(char *buffer, int line_number, stack_t **head)
 {
 	char *argument = NULL;
 	int i = 0;
 	char *data;
 	instruction_t monty_functions[] = {
-		{"push", _push}, {"pall", _pall}, {"pint", _pint},
+		{"push", _push}, {"pall", _pall}, {"pint", _pint}/*,
 		{"pop", _pop}, {"swap", _swap}, {"add", _add},
-		{"nop", _nop}, {NULL, NULL}
+		{"nop", _nop}*/, {NULL, NULL}
 	};
 
 	argument = strtok(buffer, " \n");
-
 	while (monty_functions[i].opcode)
 	{
 		if (strcmp(argument, monty_functions[i].opcode) == 0)
-			monty_functions[i].f(asdasdasdsad, line_number);
+		{
+			monty_functions[i].f(head, line_number);
 			break;
+		}
 		i++;
 	}
 }
