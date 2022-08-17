@@ -22,8 +22,11 @@ int main(int argc, char **argv)
 	}
 
 
-	monty_file = fopen(argv[1], "r");
-
+	if ((monty_file = fopen(argv[1], "r")) == NULL)
+	{
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+		exit(EXIT_FAILURE);
+	}
 	while (fgets(buffer, 1024, monty_file))
 	{
 		count_line++;
@@ -37,12 +40,14 @@ void choose_function(char *buffer, int line_number, stack_t **head)
 	char *argument = NULL;
 	int i = 0;
 	instruction_t monty_functions[] = {
-		{"push", _push}, {"pall", _pall}, {"pint", _pint}/*,
+		{"push", _push}, {"pall", _pall}, {"pint", _pint},
 		{"pop", _pop}, {"swap", _swap}, {"add", _add},
-		{"nop", _nop}*/, {NULL, NULL}
+		{"nop", _nop}, {"sub", _sub}, {NULL, NULL}
 	};
 
 	argument = strtok(buffer, " \n");
+	if (!argument)
+		return;
 	while (monty_functions[i].opcode)
 	{
 		if (strcmp(argument, monty_functions[i].opcode) == 0)
@@ -51,5 +56,10 @@ void choose_function(char *buffer, int line_number, stack_t **head)
 			break;
 		}
 		i++;
+	}
+	if (monty_functions[i].opcode == NULL)
+	{
+	       fprintf(stderr, "L%u: unknown instruction %s\n", line_number, argument);
+	       exit(EXIT_FAILURE);
 	}
 }
