@@ -44,6 +44,7 @@ void _pop(stack_t **, unsigned int);
 void _swap(stack_t **, unsigned int);
 void _add(stack_t **, unsigned int);
 void _nop(stack_t **, unsigned int);
+void _sub(stack_t **, unsigned int);
 void choose_function(char *, int, stack_t **);
 
 #endif
