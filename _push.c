@@ -2,7 +2,7 @@
 
 void _push(stack_t **head_ref, unsigned int line_number)
 {
-	stack_t *new_elem = NULL, *aux = NULL;
+	stack_t *new_elem = NULL;
 	int data;
 	(void)line_number;
 
@@ -13,7 +13,6 @@ void _push(stack_t **head_ref, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	data = atoi(strtok(NULL, " \n"));
-	aux = *head_ref;
 	new_elem->n = data;
 	new_elem->prev = NULL;
 	new_elem->next = NULL;
