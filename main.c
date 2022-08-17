@@ -60,6 +60,7 @@ void choose_function(char *buffer, int line_number, stack_t **head)
 	if (monty_functions[i].opcode == NULL)
 	{
 	       fprintf(stderr, "L%u: unknown instruction %s\n", line_number, argument);
+	       free_stack(*head);
 	       exit(EXIT_FAILURE);
 	}
 }
