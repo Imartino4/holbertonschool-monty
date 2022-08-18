@@ -1,11 +1,9 @@
 #include "monty.h"
-
 /**
- * _add - 
- * @head_ref:
- * @line_number:
+ * _add - adds
+ * @head_ref: pointer to pointer to data.
+ * @line_number: line number.
  */
-
 void _add(stack_t **head_ref, unsigned int line_number)
 {
 	stack_t *aux = *head_ref;

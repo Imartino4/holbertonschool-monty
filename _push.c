@@ -1,5 +1,9 @@
 #include "monty.h"
-
+/**
+ * _push - pushes an elem in a stack.
+ * @head_ref: pointer to pointer to what to push.
+ * @line_number: the line in which the cmd is.
+ */
 void _push(stack_t **head_ref, unsigned int line_number)
 {
 	stack_t *new_elem = NULL;
@@ -21,11 +25,6 @@ void _push(stack_t **head_ref, unsigned int line_number)
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	/*if (aux == 1)
-	{
-		fprintf(stderr, "L%u: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
-	}*/
 	if (data_string == NULL)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);

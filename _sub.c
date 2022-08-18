@@ -1,11 +1,9 @@
 #include "monty.h"
-
 /**
- * _sub - 
- * @head_ref:
- * @line_number:
+ * _sub - subs
+ * @head_ref: pointer to first elem of stack.
+ * @line_number: line number.
  */
-
 void _sub(stack_t **head_ref, unsigned int line_number)
 {
 	stack_t *aux = *head_ref;
