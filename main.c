@@ -11,6 +11,7 @@ int main(int argc, char **argv)
 
 	FILE *monty_file;
 	char buffer[1024];
+	size_t len = 1024;
 	unsigned int count_line = 0;
 	stack_t *head;
 
@@ -27,11 +28,12 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (fgets(buffer, 1024, monty_file))
+	while (fgets(buffer, len, monty_file))
 	{
 		count_line++;
 		choose_function(buffer, count_line, &head);
 	}
+	fclose(monty_file);
 	return (0);
 }
 
