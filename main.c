@@ -34,6 +34,7 @@ int main(int argc, char **argv)
 		choose_function(buffer, count_line, &head);
 	}
 	fclose(monty_file);
+	free_stack(head);
 	return (0);
 }
 
