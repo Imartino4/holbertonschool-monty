@@ -6,6 +6,10 @@
  */
 void _pint(stack_t **head_ref, unsigned int line_number)
 {
-	(void)line_number;
+	if (*head_ref == NULL)
+	{
+		fprintf("L%u: can't pint, stack empty", line_number);
+		exit(EXIT_FAILURE);
+	}
 	printf("%d\n", (*head_ref)->n);
 }
