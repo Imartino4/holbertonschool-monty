@@ -21,9 +21,14 @@ void _push(stack_t **head_ref, unsigned int line_number)
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
+	/*if (aux == 1)
+	{
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}*/
 	if (data_string == NULL)
 	{
-		fprintf(stderr, "L4: usage: push integer\n");
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	/*printf("data:%s\n", data_string);*/

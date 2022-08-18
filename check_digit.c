@@ -8,7 +8,7 @@
 
 int check_digit(char *string)
 {
-	int i = 0;
+	int i = 0, counter = 0;
 
 	if (string == NULL)
 		return(0);
@@ -19,7 +19,11 @@ int check_digit(char *string)
 			i++;
 			continue;
 		}
-		if (string[i] > 57 || string[i] < 48)
+		if (string[i] == ' ') 
+			counter++;
+		/*if (counter > 2)
+			return (1);*/
+		if ((string[i] > 57 || string[i] < 48) && counter > 2)
 			return(-1);
 		i++;
 	}
