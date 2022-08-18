@@ -55,6 +55,7 @@ void choose_function(char *buffer, int line_number, stack_t **head)
 		if (strcmp(argument, monty_functions[i].opcode) == 0)
 		{
 			monty_functions[i].f(head, line_number);
+			
 			break;
 		}
 		i++;

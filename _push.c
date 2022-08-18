@@ -23,7 +23,7 @@ void _push(stack_t **head_ref, unsigned int line_number)
 	}
 	if (data_string == NULL)
 	{
-		fprintf(stderr, "Error: \n");
+		fprintf(stderr, "L6: usage: push integer\n");
 		exit(EXIT_FAILURE);
 	}
 	/*printf("data:%s\n", data_string);*/
@@ -36,6 +36,6 @@ void _push(stack_t **head_ref, unsigned int line_number)
 	{
 		new_elem->next = (*head_ref);
 		(*head_ref)->prev = new_elem;
-	}	
+	}
 	*head_ref = new_elem;
 }
