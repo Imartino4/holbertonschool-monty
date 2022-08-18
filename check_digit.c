@@ -6,7 +6,7 @@
  */
 int check_digit(char *string)
 {
-	int i = 0, counter = 0;
+	int i = 0, /*counter = 0*/;
 
 	if (string == NULL)
 		return (0);
