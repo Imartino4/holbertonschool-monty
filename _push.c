@@ -23,7 +23,7 @@ void _push(stack_t **head_ref, unsigned int line_number)
 	}
 	if (data_string == NULL)
 	{
-		fprintf(stderr, "L6: usage: push integer\n");
+		fprintf(stderr, "L4: usage: push integer\n");
 		exit(EXIT_FAILURE);
 	}
 	/*printf("data:%s\n", data_string);*/
