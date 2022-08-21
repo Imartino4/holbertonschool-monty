@@ -55,7 +55,7 @@ void choose_function(char *buffer, int line_number, stack_t **head)
 	argument = strtok(buffer, " \n");
 	if (!argument)
 		return;
-	else if (strcmp(argument, "#") == 0)
+	else if (strncmp(argument, "#", 1) == 0)
 		return;
 	while (monty_functions[i].opcode)
 	{
