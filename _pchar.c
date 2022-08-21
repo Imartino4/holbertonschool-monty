@@ -6,19 +6,22 @@
  */
 void _pchar(stack_t **head_ref, unsigned int line_number)
 {
-	if ((*head_ref)->n)
+	if (head)
 	{
-		if ((*head_ref)->n < 0 || (*head_ref)->n > 127)
+		if ((*head_ref)->n)
 		{
-			fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
-			exit(EXIT_FAILURE);
+			if ((*head_ref)->n < 0 || (*head_ref)->n > 127)
+			{
+				fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
+				exit(EXIT_FAILURE);
+			}
+			else
+				printf("%c\n", (*head_ref)->n);
 		}
 		else
-			printf("%c\n", (*head_ref)->n);
-	}
-	else
-	{
-		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
-		exit(EXIT_FAILURE);
+		{
+			fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
+			exit(EXIT_FAILURE);
+		}
 	}
 }
