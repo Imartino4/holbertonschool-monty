@@ -48,7 +48,8 @@ void choose_function(char *buffer, int line_number, stack_t **head)
 	instruction_t monty_functions[] = {
 		{"push", _push}, {"pall", _pall}, {"pint", _pint},
 		{"pop", _pop}, {"swap", _swap}, {"add", _add},
-		{"nop", _nop}, {"sub", _sub}, {NULL, NULL}
+		{"nop", _nop}, {"sub", _sub}, {"div", _div},
+		{"mul", _mul}, {"mod", _mod}, {"pchar", _pchar}, {NULL, NULL}
 	};
 
 	argument = strtok(buffer, " \n");
