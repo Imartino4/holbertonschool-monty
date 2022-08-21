@@ -19,7 +19,7 @@ void _pchar(stack_t **head_ref, unsigned int line_number)
 				printf("%c\n", (*head_ref)->n);
 		}
 	}
-	else	
+	else
 	{
 		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
