@@ -6,7 +6,7 @@
  */
 void _pchar(stack_t **head_ref, unsigned int line_number)
 {
-	if (head)
+	if (head_ref)
 	{
 		if ((*head_ref)->n)
 		{
