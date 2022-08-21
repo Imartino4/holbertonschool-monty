@@ -18,10 +18,10 @@ void _pchar(stack_t **head_ref, unsigned int line_number)
 			else
 				printf("%c\n", (*head_ref)->n);
 		}
-		else
-		{
-			fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
-			exit(EXIT_FAILURE);
-		}
+	}
+	else	
+	{
+		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
 	}
 }
